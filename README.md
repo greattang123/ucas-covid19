@@ -57,7 +57,14 @@ Github提供了一个secret功能，用于存储密钥等敏感信息，请按�
 - 在仓库设置里面, 设置 secrets 如下
   - `SEP_USER_NAME`: 你的 SEP 用户名(邮箱)
   - `SEP_PASSWD`: 你的 SEP 密码
-  - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用
+  - server酱通知设置（需要server酱通知时设置）：
+    - `API_KEY`: 你的通知[server酱](http://sc.ftqq.com/3.version)的api key，填写之后可以在程序完成打卡之后通知到微信，如果不填写不影响使用
+  - 邮件通知设置（需要邮件通知时设置）：
+    - `SMTP_PORT`: 邮件服务器端口，不设置即为qq邮件服务器端口：465
+    - `SMTP_SERVER`: 邮件服务器地址，不设置即为qq邮件服务器：smtp.qq.com
+    - `SENDER_EMAIL`: 发送通知打卡通知邮件的邮箱，必须设置
+    - `SENDER_EMAIL_PASSWD`: 发送通知打卡通知邮件的邮箱密码，需要开启邮箱smtp服务，此处可能不为邮箱的登录密码，如：qq邮箱为授权码，需要在设置中生成，必须设置
+    - `RECEIVER_EMAIL`: 接收打卡通知邮件的邮箱，必须设置
 - 测试actions是否可以正常工作：编辑本项目内任意文件，推荐修改`README.md`，比如添加一个空行，并提交以触发action运行，提交后的一分钟左右可以在action选项卡中看到运行记录
 
 
@@ -142,6 +149,7 @@ $ crontab -e
 - 2020年11月7日 使用环境变量传递口令，解决密码中存在特殊字符导致 sed 截断的问题
 - 2020年11月9日 bugfix: 修复环境变量传递口令中存在的 bug， 经过测试已经 work 了，面壁思过中 :( 
 - 2020年12月2日 网站证书配置有误导致打卡失败，修改代码为不验证证书
+- 2020年12月22日 添加邮件通知
 
 
 # 致谢
@@ -150,6 +158,7 @@ $ crontab -e
 - 感谢 [HsimWong](https://github.com/IanSmith123/ucas-covid19/pull/3) 对文档的完善工作
 - 感谢 [spwpun](https://github.com/IanSmith123/ucas-covid19/pull/6) 添加了使用 windows 计划任务的操作步骤
 - 感谢 [PrimeMHD ](https://github.com/IanSmith123/ucas-covid19/pull/7) 添加了使用 MacOS 的 crontab 的配置步骤
+- 感谢 [T-winkle](https://github.com/IanSmith123/ucas-covid19/pull/24) 添加了邮件通知打卡结果的功能
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">知识共享署名-非商业性使用-相同方式共享 3.0 未本地化版本许可协议</a>进行许可。
 
