@@ -150,7 +150,7 @@ $ crontab -e
 - 2020年11月9日 bugfix: 修复环境变量传递口令中存在的 bug， 经过测试已经 work 了，面壁思过中 :( 
 - 2020年12月2日 网站证书配置有误导致打卡失败，修改代码为不验证证书
 - 2020年12月22日 添加邮件通知
-just a trick
+-Go
 
 # 致谢
 - 感谢 [karuboniru](https://github.com/IanSmith123/ucas-covid19/pull/1) 提供的github actions 支持
